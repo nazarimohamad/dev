@@ -1,0 +1,18 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ryan Nazari <ryannazari21@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "v12.2.0",
+    "yarn": "1.17.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.5"
+  }
+}

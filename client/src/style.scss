@@ -1,0 +1,177 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 760px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+nav {
+  font-size: 1.2rem;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-image: url("./images/alborz.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  & .text {
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    left: 13%;
+    color: white;
+    animation: fadeIn 1s linear;
+
+    & h2 {
+      font-size: 2.9rem;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 0, 0, 0.9)
+    ),
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.2)
+    );
+}
+
+@media screen and (max-width: 760px) {
+  .hero {
+    width: 100%;
+    height: 70vh;
+
+    & .text {
+      width: 70%;
+    }
+  }
+}
+
+.product {
+  h2 {
+    font-size: 2.9rem;
+    color: #1c1c1ddb;
+  }
+
+  hr {
+    width: 25%;
+    height: 0.2rem;
+    background-color: #32a2b8;
+    margin: 2rem auto;
+  }
+
+  p {
+    font-size: 1.3rem;
+    color: #1c1c1dc4;
+  }
+
+  & .box {
+    // transform: scale(1);
+    transition: all 0.2s linear;
+  }
+
+  & .box:hover {
+    transform: scale(1.03);
+    box-shadow: 1px 1px 6px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .product_desc {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.review {
+  margin: 7rem auto;
+  h2 {
+    font-size: 2.9rem;
+    color: #1c1c1ddb;
+  }
+
+  hr {
+    width: 55%;
+    height: 0.2rem;
+    background-color: #32a2b8;
+    margin: 2rem 0;
+  }
+}
+
+.contact {
+  background-color: #161617fa;
+  padding: 2rem;
+  margin-top: 5rem;
+
+  .contact_text {
+    width: 35%;
+    color: white;
+  }
+
+  .contact_form {
+    background-color: white;
+    box-shadow: 1px 1px 8px 4px rgba(109, 145, 159, 0.201);
+
+    .contact_form_info {
+      background-color: #161617fa;
+      color: white;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .contact {
+    .contact_text {
+      width: 65%;
+    }
+  }
+}
+
+.footer {
+  background: #0c0c0cfa;
+  color: white;
+}
