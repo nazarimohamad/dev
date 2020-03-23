@@ -36,9 +36,9 @@ app.post('/contact', (req, res) => {
 
     let mailOption = {
       from: req.body.email,
-      to: 'ryannazari21@gmail.com',
+      to: 'hello@bteks.co',
       subject: "Hello ✔",
-      text: "Hello world?",
+      text: "",
       html: output
     }
 

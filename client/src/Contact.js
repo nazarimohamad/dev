@@ -10,8 +10,8 @@ const Contact = () => {
   const [name, setName] = useState(''),
         [email, setEmail] = useState(''),
         [message, setMessage] = useState(''),
-        [open, setOpen] = useState(false),
-        [transition, setTransition] = useState(undefined)
+        [open, setOpen] = useState(false);
+        // [transition, setTransition] = useState(undefined)
 
   const data = { name, email, message };
 
@@ -79,7 +79,7 @@ const Contact = () => {
             <Snackbar
               open={open}
               onClose={handleClose}
-              TransitionComponent={transition}
+              // TransitionComponent={transition}
               ContentProps={{
                 'aria-describedby': 'message-id',
               }}
@@ -89,9 +89,9 @@ const Contact = () => {
           <div className="p-4 ml-0 ml-md-3 mt-2 mt-md-0 col-12 col-md-6 col-lg-4 contact_form_info">
             <div className="d-flex flex-column justify-content-around">
               <h4 className="my-4">Contact infromation</h4>
-              <h4 className="my-4"><span className="mx-2"><FaMobile style={{color:"#32a2b8"}} /></span>+372 53599795</h4>
-              <h4 className="my-4"><span className="mx-2"><MdEmail style={{color:"#32a2b8"}} /></span>hello@bteks.co</h4>
-              <h4 className="my-4"><span className="mx-2"><MdLocationOn style={{color:"#32a2b8"}} /></span>Luise 38/a, Tallinn, Estonia</h4>
+              <h5 className="my-4"><span className="mr-2"><FaMobile style={{color:"#32a2b8"}} /></span>+372 53599795</h5>
+              <h5 className="my-4"><span className="mr-2"><MdEmail style={{color:"#32a2b8"}} /></span>hello@bteks.co</h5>
+              <h5 className="my-4"><span className="mr-2"><MdLocationOn style={{color:"#32a2b8"}} /></span>Tallinn, Estonia</h5>
             </div>
           </div>
           </div>

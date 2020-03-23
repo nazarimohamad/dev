@@ -23,7 +23,7 @@ const Menu = () => {
   return (
     <Navbar fixed="top" bg={isMove ? "light" : "transparent"} variant={isMove ? "light" : "dark"} expand="md">
       <Navbar.Brand className="text-info ml-5" href="#home"><h2>Bteks</h2></Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      {/* <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav"  className="d-md-flex justify-content-md-center">
         <Nav>
           <Nav.Link className="mx-3" href="#home">Home</Nav.Link>
@@ -36,7 +36,7 @@ const Menu = () => {
             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
           </NavDropdown>
         </Nav>
-      </Navbar.Collapse>
+      </Navbar.Collapse> */}
     </Navbar>
   );
 }
