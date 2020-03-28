@@ -1,5 +1,6 @@
 import React from 'react';
-import { Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+import { Navbar, Nav} from 'react-bootstrap';
 
 
 const Menu = () => {
@@ -22,13 +23,13 @@ const Menu = () => {
 
   return (
     <Navbar className="navbar" fixed="top" bg="light" variant="light" expand="md">
-      <Navbar.Brand className="text-info ml-5" href="#home"><h2>Bteks</h2></Navbar.Brand>
+      <Navbar.Brand className="ml-5" href="/"><h2><Link className="text-info" to="/">Bteks</Link></h2></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav"  className="d-md-flex justify-content-md-center">
         <Nav>
-          <Nav.Link className="mx-3" href="/">Home</Nav.Link>
-          <Nav.Link className="mx-3" href="/career">Career</Nav.Link>
-          <Nav.Link className="mx-3" href="/technology">Technology</Nav.Link>
+          <Link className="mx-3 text-dark" to="/">Home</Link>
+          <Link className="mx-3 text-dark" to="/career">Career</Link>
+          <Link className="mx-3 text-dark" to="/technology">Technology</Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

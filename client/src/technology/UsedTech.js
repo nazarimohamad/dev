@@ -30,7 +30,7 @@ const UsedTech = () => {
           <div className="items mt-5 d-flex flex-wrap justify-content-around">
             {items.map((item, idx) => {
               return (
-                <div className="item my-3 my-md-5 mx-3 py-4 px-5">
+                <div className="item my-3 my-md-5 mx-2 mx-md-3 py-4 px-5">
                   <span>{item.icon}</span>
                   <h6 className="text-uppercase mt-3 ml-2">{item.title}</h6>
                 </div>
