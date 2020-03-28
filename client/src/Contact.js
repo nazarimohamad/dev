@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Snackbar from '@material-ui/core/Snackbar';
+import { Snackbar, TextField} from '@material-ui/core/';
 import {Form, Button} from "react-bootstrap";
-import { FaMobile } from "react-icons/fa";
-import { MdEmail, MdLocationOn } from "react-icons/md";
 
 const Contact = () => {
 
@@ -54,24 +52,46 @@ const Contact = () => {
     <div className="contact">
       <div className="container mt-5">
       <div className="contact_text">
-        <h2>Get in touch</h2>
-        <p>Use the form bellow to send us message and start the conversation with our best lawyers.</p>
+        <h2 className="text-center">Contact us</h2>
       </div>
-        <div className="row mt-5 justify-content-between contact_form">
-          <div className="p-4 ml-0 ml-md-4 col-12 col-md-9 col-lg-6 contact_form_input">
+        <div className="contact_form row mt-5 justify-content-between">
+          <div className="contact_form_input p-4 ml-0 ml-md-4 col-12 col-md-9 col-lg-6">
             <Form onSubmit={handleSubmit}>
               <Form.Row>
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" value={email} name="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)}/>
+                <TextField
+                      id="standard-basic"
+                      label="Email Address"
+                      type="email"
+                      value={email}
+                      name="email"
+                      placeholder="viktoria@email.com"
+                      onChange={(e) => setEmail(e.target.value)}/>
               </Form.Row>
               <Form.Row>
-                <Form.Label>Your name</Form.Label>
-                <Form.Control type="text" value={name} name="name" placeholder="your name" onChange={(e) => setName(e.target.value)}/>
+                <TextField
+                      id="standard-basic"
+                      label="Your Name"
+                      type="text"
+                      value={name}
+                      name="name"
+                      placeholder="Viktoria Lan"
+                      onChange={(e) => setName(e.target.value)}/>
               </Form.Row>
               <Form.Row>
-                <Form.Label>Message</Form.Label>
-                <Form.Control as="textarea" value={message} name="message" rows="6" placeholder="write your message" onChange={(e) => setMessage(e.target.value)}/>
+                <TextField
+                      id="standard-textarea"
+                      label="Message"
+                      multiline
+                      value={message}
+                      name="message"
+                      rows="6"
+                      placeholder="Hello Bteks, I would like to create my app with your company."
+                      onChange={(e) => setMessage(e.target.value)}/>
+
               </Form.Row>
+              {/* <Button type="submit" className="mt-2" variant="contained" style={{color: "white", background:"#32a2b8", width:"100%"}}">
+                  Link
+                </Button> */}
               <Button type="submit" className="mt-2" variant="info" block>
                 Send
               </Button>
@@ -86,13 +106,9 @@ const Contact = () => {
               message={<span id="message-id">message sent successfuly</span>}
             />
           </div>
-          <div className="p-4 ml-0 ml-md-3 mt-2 mt-md-0 col-12 col-md-6 col-lg-4 contact_form_info">
-            <div className="d-flex flex-column justify-content-around">
-              <h4 className="my-4">Contact infromation</h4>
-              <h5 className="my-4"><span className="mr-2"><FaMobile style={{color:"#32a2b8"}} /></span>+372 53599795</h5>
-              <h5 className="my-4"><span className="mr-2"><MdEmail style={{color:"#32a2b8"}} /></span>hello@bteks.co</h5>
-              <h5 className="my-4"><span className="mr-2"><MdLocationOn style={{color:"#32a2b8"}} /></span>Tallinn, Estonia</h5>
-            </div>
+          <div className="contact_form_info p-4 ml-0 ml-md-3 mt-2 mt-md-0 col-12 col-md-6 col-lg-4">
+          <h2>Get in touch</h2>
+          <p>Use this form to send us message and start the conversation with our best lawyers.</p>
           </div>
           </div>
       </div>

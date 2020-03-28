@@ -1,3 +1,19 @@
+$font-openSans: "Open Sans",
+sans-serif;
+$font-robuto: "Roboto",
+sans-serif;
+$blackPen: #1c1c1ddb;
+$blackBackground: #161617fa;
+$blue: #32a2b8;
+//40b8d098
+
+@mixin h2 {
+  font-size: 2.9rem;
+  font-family: $font-robuto;
+  color: $blackPen;
+}
+
+
 * {
   margin: 0;
   padding: 0;
@@ -19,31 +35,58 @@ body {
 }
 
 
+//******************
+// Navbar
+//******************
+
+.navbar {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
 nav {
   font-size: 1.2rem;
 }
 
+
+
+//******************
+// hero
+//******************
 .hero {
   width: 100%;
   height: 100vh;
   position: relative;
-  background-image: url("./images/alborz.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  // background-image: url("./images/alborz.jpg");
+  // background-position: center;
+  // background-size: cover;
+  // background-repeat: no-repeat;
 
   & .text {
     width: 40%;
     position: absolute;
     top: 40%;
-    left: 13%;
-    color: white;
+    right: 13%;
+    color: $blackPen;
     animation: fadeIn 1s linear;
 
     & h2 {
       font-size: 2.9rem;
     }
   }
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 10rem;
+  left: -22rem;
+  height: 40rem;
+  width: 40rem;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: $blue;
+  animation: fadeLeft 1s linear;
 }
 
 @keyframes fadeIn {
@@ -61,20 +104,14 @@ nav {
   }
 }
 
-.hero::before {
-  content: " ";
-  display: block;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 0, 0, 0.9)),
-    linear-gradient(to right,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.2));
+@keyframes fadeLeft {
+  from {
+    transform: translateX(-10rem) scale(0.6);
+  }
+
+  to {
+    transform: translateX(0) scale(1);
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -87,12 +124,23 @@ nav {
 
       & h2 {
         font-size: 2.5rem;
+
+        span {
+          color: $blackPen !important;
+        }
       }
     }
   }
 }
 
+
+//****************
+// product
+//****************
+
 .product {
+  position: relative;
+
   h2 {
     font-size: 2.9rem;
     color: #1c1c1ddb;
@@ -129,7 +177,38 @@ nav {
   }
 }
 
+// .review::before {
+//   display: block;
+//   content: "";
+//   position: absolute;
+//   top: -20rem;
+//   left: -10rem;
+//   width: 20rem;
+//   height: 20rem;
+//   border-radius: 50%;
+//   z-index: -1;
+//   background-color: $blue;
+// }
+
+// .services::after {
+//   display: block;
+//   content: "";
+//   position: absolute;
+//   top: 30rem;
+//   right: 10rem;
+//   width: 10rem;
+//   height: 10rem;
+//   border-radius: 50%;
+//   z-index: -1;
+//   background-color: $blue;
+// }
+
+
+//******************
+// review
+//******************
 .review {
+  position: relative;
   margin: 7rem auto;
 
   h2 {
@@ -150,29 +229,69 @@ nav {
 //******************
 
 .contact {
-  background-color: #161617fa;
+  width: 100%;
+  position: relative;
   padding: 2rem;
-  margin-top: 5rem;
 
   .contact_text {
-    width: 35%;
-    color: white;
+    h2 {
+      @include h2();
+    }
   }
 
   .contact_form {
-    background-color: white;
     box-shadow: 1px 1px 8px 4px rgba(109, 145, 159, 0.201);
 
-    .contact_form_info {
-      background-color: #161617fa;
-      color: white;
+    .MuiFormControl-root {
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    & .contact_form_info {
+      overflow: hidden;
+
+      & h2 {
+        font-size: 2.3rem;
+        color: white;
+        margin: 2rem 0 4rem 5rem;
+      }
+
+      & p {
+        font-size: 1.1rem;
+      }
 
       & span {
         font-size: x-large;
       }
     }
+
+    & .contact_form_info::before {
+      display: block;
+      content: "";
+      position: absolute;
+      top: -14rem;
+      right: -10rem;
+      width: 30rem;
+      height: 30rem;
+      border-radius: 50%;
+      z-index: -1;
+      background-color: $blue;
+      // animation: fadeRightDown 1s linear;
+
+    }
   }
 }
+
+
+// @keyframes fadeRightDown {
+//   from {
+//     transform: translateX(10rem) scale(0.6);
+//   }
+
+//   to {
+//     transform: translateX(0) scale(1);
+//   }
+// }
 
 @media screen and (max-width: 760px) {
   .contact {
@@ -183,6 +302,17 @@ nav {
 }
 
 .footer {
-  background: #0c0c0cfa;
-  color: white;
+  background: #F8F9FA;
+
+  li {
+    list-style: none;
+    color: $blackPen;
+    font-size: 0.9rem;
+
+    a {
+      color: $blackPen;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  }
 }

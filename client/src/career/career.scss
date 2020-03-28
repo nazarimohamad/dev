@@ -1,0 +1,194 @@
+$font-openSans: "Open Sans",
+sans-serif;
+$font-robuto: "Roboto",
+sans-serif;
+$blackPen: #1c1c1ddb;
+$blackBackground: #161617fa;
+$blue: #32a2b8;
+//40b8d098
+
+@mixin h2 {
+  font-size: 2.9rem;
+  font-family: $font-robuto;
+  color: $blackPen;
+}
+
+.HeroCareer {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  background-image: url("../images/joob.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  // .text {
+  //   position: absolute;
+  //   top: 90%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   padding: 1rem;
+  //   box-shadow: 1px 1px 4px 2px gray;
+  //   // border: 1px solid gray;
+  //   background: rgba(255, 255, 255, 0.8);
+
+  h2 {
+    @include h2();
+    color: white;
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    animation: fadeIn 1s linear;
+  }
+
+  p {
+    width: 35%;
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    font-size: 1.3rem;
+    animation: fadeIn 1s linear;
+  }
+
+  // }
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.8);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .careerHero {
+    h2 {
+      font-size: 1.8rem;
+      width: 80%;
+      margin: 3rem auto;
+    }
+
+    p {
+      width: 90%;
+      top: 70%;
+    }
+  }
+}
+
+//***************
+// Benefits
+//***************
+.benefits {
+  margin-top: 17rem;
+
+  .benefits_text {
+    h2 {
+      @include h2();
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+//****************
+// process
+//***************
+.process {
+  margin-top: 4rem;
+
+  h2 {
+    @include h2();
+  }
+
+  .items {
+    display: flex;
+    justify-content: space-between;
+
+    .item {
+      // width: 40%;
+      height: 20rem;
+      position: relative;
+
+      img {
+        max-width: 100px;
+        position: absolute;
+        top: 2rem;
+        right: 8rem;
+      }
+
+      h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        font-size: 15rem;
+        opacity: 0.3;
+        color: #32a2b8;
+      }
+
+      p {
+        position: absolute;
+        bottom: 6rem;
+        left: 5rem;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+//****************
+// jobs
+//***************
+
+.jobs {
+  h2 {
+    @include h2();
+  }
+
+  .city {
+    h6 {
+      margin: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: underline;
+
+      span {
+        display: inline-block;
+        font-size: 1rem;
+        font-weight: normal;
+        transform: rotate(0deg);
+        transition: all 0.3s linear;
+      }
+
+      .down {
+        color: red;
+        transform: rotate(90deg);
+      }
+
+      li {
+        // list-style: decimal;
+        font-size: 0.9rem;
+        color: $blue;
+      }
+    }
+
+    img {
+      max-width: 600px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .jobs {
+    .city {
+      img {
+        max-width: 300px;
+      }
+    }
+  }
+}
