@@ -15,7 +15,7 @@ function Main() {
         <Route exact path="/" render={() => <Home/>} />
         <Route path="/about" render={() => <About/>} />
         <Route path="/career" render={() => <Career/>} />
-        <Route path="/technology" render={() => <Technology/>} />
+        {/* <Route path="/technology" render={() => <Technology/>} /> */}
       </Switch>
       <Footer />
     </>

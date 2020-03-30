@@ -29,7 +29,7 @@ const Menu = () => {
         <Nav>
           <Link className="mx-3 text-dark" to="/">Home</Link>
           <Link className="mx-3 text-dark" to="/career">Career</Link>
-          <Link className="mx-3 text-dark" to="/technology">Technology</Link>
+          {/* <Link className="mx-3 text-dark" to="/technology">Technology</Link> */}
         </Nav>
       </Navbar.Collapse>
     </Navbar>

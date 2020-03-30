@@ -12,7 +12,7 @@ const Footer = () => {
               <ul>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/career">Career</Link></li>
-                <li><Link to="/technology">Technology</Link></li>
+                {/* <li><Link to="/technology">Technology</Link></li> */}
               </ul>
             </div>
             <div>
@@ -20,6 +20,9 @@ const Footer = () => {
               <ul>
                 <li>+372 53599795</li>
                 <li><a href = "mailto: hello@btekc.co">hello@bteks.co</a></li>
+                <li>Houston, USA</li>
+                <li>London, UK</li>
+                <li>Amsterdam ,Netherland</li>
                 <li>Tallinn, Estonia</li>
               </ul>
             </div>

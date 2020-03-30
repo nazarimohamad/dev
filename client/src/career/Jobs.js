@@ -3,7 +3,7 @@ import { Nav } from 'react-bootstrap';
 import hstn from '../images/houston.jpg';
 import amsterdam from '../images/amsterdam.jpg';
 import tallinn from '../images/tallinn.jpg';
-import shiraz from '../images/shiraz.jpg';
+import london from '../images/london.jpeg';
 
 const Jobs = () => {
 
@@ -23,8 +23,8 @@ const Jobs = () => {
     } else if(activeKey === "tallinn") {
       setData({name: "tallinn", img: tallinn, jobs: ["UI/UX Designer", "Front-End Developer"]});
       setCity(activeKey);
-    } else if(activeKey === "shiraz") {
-      setData({name: "shiraz", img: shiraz, jobs: ["UI/UX Designer"]});
+    } else if(activeKey === "london") {
+      setData({name: "london", img: london, jobs: ["UI/UX Designer"]});
       setCity(activeKey);
     }
   }
@@ -51,14 +51,10 @@ const Jobs = () => {
             <Nav.Link eventKey="amsterdam">Amsterdam</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="tallinn">
-            Tallinn
-            </Nav.Link>
+            <Nav.Link eventKey="tallinn">Tallinn</Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="shiraz">
-              Shiraz
-            </Nav.Link>
+            <Nav.Link eventKey="london">London</Nav.Link>
           </Nav.Item>
         </Nav>
        </div>
@@ -69,7 +65,7 @@ const Jobs = () => {
               {i} <span className={click===true ? "down" : ""}>></span>
               {click === true ?
 
-                (city==="shiraz") ?
+                (city==="london") ?
                 idx === 0 ? <div>{design}</div> : "" :
                 (city==="houston") ?
                 idx === 0 ? <div>{fullstack}</div> : <div>{dataScience}</div> :
